@@ -27,4 +27,5 @@ Save all your images in a single folder with no other images.
 Run the macro.
 It will first ask you to choose the source directory - select the folder containing the images.
 It will then ask you to choose the output directory - select the folder where you want the prepared images to save.
+Channel 1 is assumed to be green/GCaMP while channel 2 is assumed to be red/tdtomato and the tiffs will be saved as name_green.tiff and name_red.tiff, respectively.
 When the macro is done you should see 2x the images in the output directory.
