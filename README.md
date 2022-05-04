@@ -14,6 +14,17 @@ Within the Zen black software the following settings were used:
 - laser power = 12.0
 - gain (for both green and red channels) = 750
 
+## Blinding images with the batchblind2.m script
+This script automatically blinds the LSM files. This step can be omitted if you do not want to blind your results.
+
+### To use this script:
+- Save all your images for an experiement in a single folder with no other images.
+- Run the script.
+- Select the folder containing those images.
+- This script will create a new folder within the original that contains the blinded images. 
+- It will also save the key as key.mat file.
+- To unblind the images, load the key.mat file in matlab. Open the key cell found in the workspace.
+
 ## Converting LSM files to Tiffs with the PrepforGCaMPtdt_.jim macro
 This macro takes a z-stack saved as an LSM file, computes the max intensity projection of the stack for both channels, then saves results for each channel separately as two tiffs.
 
@@ -23,7 +34,6 @@ Restart Fiji
 It should appear in the Plugins>macros dropdown menu
 
 ### Using the macro
-Save all your images in a single folder with no other images.
 Run the macro.
 It will first ask you to choose the source directory - select the folder containing the images.
 It will then ask you to choose the output directory - select the folder where you want the prepared images to save.
