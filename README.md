@@ -14,4 +14,17 @@ Within the Zen black software the following settings were used:
 - laser power = 12.0
 - gain (for both green and red channels) = 750
 
-## Converting LSM files to Tiffs with the GCaMP/tdt macro
+## Converting LSM files to Tiffs with the PrepforGCaMPtdt_.jim macro
+This macro takes a z-stack saved as an LSM file, computes the max intensity projection of the stack for both channels, then saves results for each channel separately as two tiffs.
+
+### To install the macro as a plugin in Fiji:
+Save the macro in your Fiji>Fiji.app>plugins>macros folder.
+Restart Fiji
+It should appear in the Plugins>macros dropdown menu
+
+### Using the macro
+Save all your images in a single folder with no other images.
+Run the macro.
+It will first ask you to choose the source directory - select the folder containing the images.
+It will then ask you to choose the output directory - select the folder where you want the prepared images to save.
+When the macro is done you should see 2x the images in the output directory.
