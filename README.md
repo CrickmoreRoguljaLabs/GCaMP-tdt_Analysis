@@ -29,13 +29,13 @@ This script automatically blinds the LSM files. This step can be omitted if you 
 This macro takes a z-stack saved as an LSM file, computes the max intensity projection of the stack for both channels, then saves results for each channel separately as two tiffs.
 
 ### To install the macro as a plugin in Fiji:
-Save the macro in your Fiji>Fiji.app>plugins>macros folder.
-Restart Fiji
-It should appear in the Plugins>macros dropdown menu
+- Save the macro in your Fiji>Fiji.app>plugins>macros folder.
+- Restart Fiji
+- It should appear in the Plugins>macros dropdown menu
 
 ### Using the macro
-Run the macro.
-It will first ask you to choose the source directory - select the folder containing the images.
-It will then ask you to choose the output directory - select the folder where you want the prepared images to save.
-Channel 1 is assumed to be green/GCaMP while channel 2 is assumed to be red/tdtomato and the tiffs will be saved as name_green.tiff and name_red.tiff, respectively.
-When the macro is done you should see 2x the images in the output directory.
+- Run the macro.
+- It will first ask you to choose the source directory - select the folder containing the blinded images.
+- It will then ask you to choose the output directory - select the folder where you want the prepared images to save.
+- Channel 1 is assumed to be green/GCaMP while channel 2 is assumed to be red/tdtomato and the tiffs will be saved as name_green.tiff and name_red.tiff, respectively.
+- When the macro is done you should see 2x the images in the output directory.
