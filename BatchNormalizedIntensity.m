@@ -120,5 +120,7 @@ for i = 1:nSets
 end 
 
 %% Save the intensities
-
-save myData.mat myData
+originalpath = pwd; % gets the path your currently in
+cd pathname % switches to where your images are stored
+save myData.mat myData % saves the myData cell array in that folder
+cd originalpath % switches you back to where your scripts are
