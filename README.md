@@ -39,3 +39,7 @@ This macro takes a z-stack saved as an LSM file, computes the max intensity proj
 - It will then ask you to choose the output directory - select the folder where you want the prepared images to save.
 - Channel 1 is assumed to be green/GCaMP while channel 2 is assumed to be red/tdtomato and the tiffs will be saved as name_green.tiff and name_red.tiff, respectively.
 - When the macro is done you should see 2x the images in the output directory.
+
+## Use BatchNormalizedIntensity.m to obtain normalized intensity
+This code will prompt you to select the folder containing the blinded tiffs. It will then pull up each image twice: the first time you select the ROI, the second time you select the background. It performs a background subtraction on both channels then divides to get the normalized intensity. All information is stored in the myData.mat file, the last column of which is the normalized intensity.
+
