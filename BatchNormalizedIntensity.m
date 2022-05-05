@@ -24,12 +24,12 @@ nfiles = length( filenames );
 % The number of files is 2 x the number of original images (because each
 % image contained 2 channels which have now been split into separate tiffs)
 % Count the number of distinct image sets
-nsets = nfiles/2;
+nSets = nfiles/2;
 
 %% Data Storage
 
 % Set up an empty cell to contain the sorted data
-myData = cell( nsets , 7 );
+myData = cell( nSets , 11 );
 
 % The data cell will be set up such that:
 % Column 1 = the red images names
@@ -72,7 +72,7 @@ end
 % it does this by removing the red or green that was appended to the file
 % name via the fiji code, then checking that without that, the filenames
 % match 
-for i = 1:nsets
+for i = 1:nSets
  redtest = erase(myData{i,1}, 'red');
  greentest = erase(myData{i,2}, 'green');
  if redtest ~= greentest 
@@ -83,10 +83,10 @@ end
 % if you get this error, just sort the filenames alphabetically in the
 % folder then rerun the code
  
-%% Analyze
+%% Get ROIs
 
 % for each image set 
-for i = 1:nSet 
+for i = 1:nSets 
     
 % Use the tdtomato (red) channel to select an ROI
 % Create a mask for the ROI
@@ -96,7 +96,10 @@ for i = 1:nSet
 % Use the tdtomato(red) channel to select a background area
 % Create a mask for the background
     myData{i,4} = getROI(myData{i,1},pathname);
-    
+end 
+
+%% Analyze
+for i = 1:nSets 
 % For the GCaMP (green) channel:
 % Get the average intensity within the ROI
     myData{i,5} = avgIntensity(myData{i,2},myData{i,3},pathname);
@@ -119,4 +122,3 @@ end
 %% Save the intensities
 
 save myData.mat myData
-save testovaci_modely1.mat c

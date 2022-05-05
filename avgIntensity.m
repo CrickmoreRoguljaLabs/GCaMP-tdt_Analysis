@@ -1,4 +1,4 @@
-function [meanValue]= avgIntensity(imageName,mask,pathname)
+function [meanValue]= avgIntensity(imageName,maskName,pathname)
 %% References
 
 %% Go to the folder where the images is contained
@@ -17,7 +17,7 @@ inputImage = imread(imageName); %import image
 % mask = mask.bw; %extract logical
 
 %% Get the average intensity
-meanValue = mean(inputImage(mask));
+meanValue = mean(inputImage(maskName));
 
 %% Return to original path
 cd(originalpath);

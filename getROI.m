@@ -22,7 +22,7 @@ imshow(inputImage) %displays the image
 p = drawpolygon('LineWidth',5,'Color','cyan');
 
 %% Create a mask from the ROI
-myMask = poly2mask(p.Position(:,1),p.Position(:,2),256,256);
+myMask = poly2mask(p.Position(:,1),p.Position(:,2),size(inputImage,1),size(inputImage,2));
 
 %% Save the ROI mask
 % Use if you are using this independently
@@ -34,3 +34,5 @@ myMask = poly2mask(p.Position(:,1),p.Position(:,2),256,256);
 
 cd(originalpath);
 
+%% Close the figure 
+close
