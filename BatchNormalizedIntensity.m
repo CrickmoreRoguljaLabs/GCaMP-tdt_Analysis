@@ -121,6 +121,6 @@ end
 
 %% Save the intensities
 originalpath = pwd; % gets the path your currently in
-cd pathname % switches to where your images are stored
+cd (pathname) % switches to where your images are stored
 save myData.mat myData % saves the myData cell array in that folder
-cd originalpath % switches you back to where your scripts are
+cd (originalpath) % switches you back to where your scripts are
